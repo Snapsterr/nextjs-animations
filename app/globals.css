@@ -24,6 +24,12 @@
   /* Layout */
   --container-max: 1440px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  --gradient-grid: repeating-linear-gradient(to right, rgba(244,244,242,0.05) 0px,rgba(244,244,242,0.05) 1px, transparent 1px, transparent 144px);
+  --gradient-radial: radial-gradient(circle at 34% 28%, #d6cbff 0%, var(--accent) 42%, #33226e 76%, #12091f 100%);
+
+  --shadow-shape: 0 20px 40px -16px rgba(0,0,0,0.6);
+  --shadow-radial: 0 30px 140px -5px rgba(124, 92, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 @theme inline {
@@ -43,6 +49,12 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --background-image-gradient-grid: var(--gradient-grid);
+  --background-image-gradient-radial: var(--gradient-radial);
+
+  --shadow-shape: var(--shadow-shape);
+  --shadow-radial: var(--shadow-radial);
 }
 
 body {

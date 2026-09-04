@@ -1,5 +1,13 @@
-import Image from 'next/image';
+import { Hero } from '@/app/_sections/hero';
+import { FeaturedWork } from '@/app/_sections/featured-work';
+import { ClosingCta } from '@/app/_sections/closing-cta';
 
 export default function Home() {
-	return <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>;
+	return (
+		<>
+			<Hero />
+			<FeaturedWork />
+			<ClosingCta />
+		</>
+	);
 }
