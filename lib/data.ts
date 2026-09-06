@@ -109,9 +109,9 @@ export type TimelineEntry = {
 };
 
 export const socialLinks = [
-	{ label: 'GitHub', href: 'https://github.com/johndoe' },
-	{ label: 'LinkedIn', href: 'https://linkedin.com/in/johndoe' },
-	{ label: 'X', href: 'https://x.com/johndoe' },
+	{ label: 'GitHub', href: 'https://github.com/' },
+	{ label: 'LinkedIn', href: 'https://linkedin.com/' },
+	{ label: 'X', href: 'https://x.com/' },
 ];
 
 export const profile = {
@@ -119,8 +119,10 @@ export const profile = {
 	role: 'Software Engineer',
 	location: 'Lisbon, Portugal',
 	email: 'hello@johndoe.dev',
+	startYear: 2018,
+	availability: 'Available for freelance & full-time work',
 	bio: [
-		"I build reliable, thoughtful software for the web, moving from system design and prototyping through to shipped, production-quality code.",
+		'I build reliable, thoughtful software for the web, moving from system design and prototyping through to shipped, production-quality code.',
 		'Lately I have been spending most of my time at the intersection of real-time systems, motion on the web, and frontend architecture that holds up under real traffic, not just a demo.',
 	],
 	skills: [
@@ -137,24 +139,21 @@ export const profile = {
 			role: 'Independent Software Engineer',
 			org: 'Self-employed',
 			period: '2023 — Present',
-			description:
-				'Full-stack engineering for early-stage product teams, from first prototype to production build.',
+			description: 'Full-stack engineering for early-stage product teams, from first prototype to production build.',
 		},
 		{
 			id: 'orbital',
 			role: 'Senior Software Engineer',
 			org: 'Orbital Labs',
 			period: '2020 — 2023',
-			description:
-				'Led engineering for the core dashboard product, and introduced the team’s first shared component library.',
+			description: 'Led engineering for the core dashboard product, and introduced the team’s first shared component library.',
 		},
 		{
 			id: 'northwind',
 			role: 'Software Engineer',
 			org: 'Northwind Studio',
 			period: '2018 — 2020',
-			description:
-				'Built and shipped features for a portfolio of client products across fintech and travel.',
+			description: 'Built and shipped features for a portfolio of client products across fintech and travel.',
 		},
 	] satisfies TimelineEntry[],
 };

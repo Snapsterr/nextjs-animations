@@ -9,7 +9,7 @@ export function Hero() {
 				<div className="absolute top-[14%] left-[22%] w-[32%] h-[22%] rounded-full bg-white/35 blur-[22px]" />
 			</div>
 
-			<div className="container w-full grid grid-rows-[auto_1fr_50] min-h-full py-10">
+			<div className="container w-full grid grid-rows-[auto_1fr_50] min-h-full py-24">
 				<div className="w-full flex justify-between">
 					<div className="flex flex-col gap-1">
 						<h1 className="text-5xl font-bold">John Doe</h1>

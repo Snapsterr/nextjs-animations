@@ -27,9 +27,14 @@
 
   --gradient-grid: repeating-linear-gradient(to right, rgba(244,244,242,0.05) 0px,rgba(244,244,242,0.05) 1px, transparent 1px, transparent 144px);
   --gradient-radial: radial-gradient(circle at 34% 28%, #d6cbff 0%, var(--accent) 42%, #33226e 76%, #12091f 100%);
+  --gradient-cover-accent: linear-gradient(150deg, #2a2060 0%, var(--accent) 100%);
+  --gradient-cover-warn: linear-gradient(150deg, #3a2015 0%, var(--warn) 100%);
+  --gradient-cover-neutral: linear-gradient(150deg, #1c1c20 0%, #131316 100%);
 
   --shadow-shape: 0 20px 40px -16px rgba(0,0,0,0.6);
   --shadow-radial: 0 30px 140px -5px rgba(124, 92, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-hairline: inset 0 0 0 1px var(--border-hairline);
+  --shadow-hairline-accent: inset 0 0 0 1px var(--accent);
 }
 
 @theme inline {
@@ -52,9 +57,14 @@
 
   --background-image-gradient-grid: var(--gradient-grid);
   --background-image-gradient-radial: var(--gradient-radial);
+  --background-image-gradient-cover-accent: var(--gradient-cover-accent);
+  --background-image-gradient-cover-warn: var(--gradient-cover-warn);
+  --background-image-gradient-cover-neutral: var(--gradient-cover-neutral);
 
   --shadow-shape: var(--shadow-shape);
   --shadow-radial: var(--shadow-radial);
+  --shadow-hairline: var(--shadow-hairline);
+  --shadow-hairline-accent: var(--shadow-hairline-accent);
 }
 
 body {
@@ -65,7 +75,7 @@ body {
 
 .hud-label {
   font-family: var(--font-mono), monospace;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);

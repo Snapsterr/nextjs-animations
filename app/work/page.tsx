@@ -1,3 +1,9 @@
+import { Projects } from './_sections/projects';
+
 export default function Work() {
-	return <div>Work</div>;
+	return (
+		<>
+			<Projects />
+		</>
+	);
 }

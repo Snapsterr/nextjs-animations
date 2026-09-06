@@ -11,7 +11,6 @@ export function FeaturedWork() {
 				<div className="flex flex-col gap-16">
 					<div className="flex flex-wrap items-end justify-between gap-8">
 						<div className="flex flex-col gap-4">
-							<span className="hud-label">02 — Selected work</span>
 							<h2 className="max-w-160 text-5xl font-bold">Systems and products I&apos;ve built end to end.</h2>
 						</div>
 						<Button href="/work" variant="secondary" size="sm">

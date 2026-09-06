@@ -1,3 +1,11 @@
+import { Experience } from './_sections/experience';
+import { Profile } from './_sections/profile';
+
 export default function About() {
-	return <div>About</div>;
+	return (
+		<>
+			<Profile />
+			<Experience />
+		</>
+	);
 }
