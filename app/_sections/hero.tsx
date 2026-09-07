@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'motion/react';
+import { ease, duration, stagger } from '@/lib/motion';
+
 export function Hero() {
 	return (
 		<section className="flex min-h-[calc(100vh-4rem-1px)] justify-center relative">
@@ -11,26 +16,43 @@ export function Hero() {
 
 			<div className="container w-full grid grid-rows-[auto_1fr_50] min-h-full py-24">
 				<div className="w-full flex justify-between">
-					<div className="flex flex-col gap-1">
+					<motion.div
+						className="flex flex-col gap-1"
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: duration.base, ease: ease.out }}>
 						<h1 className="text-5xl font-bold">John Doe</h1>
 						<span className="text-muted">Lisbon, PT · Available for work</span>
-					</div>
-					<div className="max-w-75">
+					</motion.div>
+
+					<motion.div
+						className="max-w-75"
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: duration.base, ease: ease.out }}>
 						<p className="text-right text-muted">
 							I'm a software engineer with a passion for building web applications that are both functional and beautiful.
 						</p>
-					</div>
+					</motion.div>
 				</div>
 				<div className="flex flex-1 items-center">
-					<div className="flex self-end max-w-240 pb-50">
+					<motion.div
+						className="flex self-end max-w-240 pb-50"
+						initial={{ opacity: 0, y: 24 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: duration.base, ease: ease.out, delay: stagger.base * 2 }}>
 						<p className="text-8xl font-bold">I build reliable, thoughtful software for the web.</p>
-					</div>
+					</motion.div>
 				</div>
-				<div className="flex justify-between items-center gap-2">
+				<motion.div
+					className="flex justify-between items-center gap-2"
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: duration.base, ease: ease.out, delay: stagger.base * 4 }}>
 					<span className="hud-label">41.15°N, 8.61°W</span>
 					<span className="hud-label">01 — Intro</span>
 					<span className="hud-label">Scroll to explore ↓</span>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);
