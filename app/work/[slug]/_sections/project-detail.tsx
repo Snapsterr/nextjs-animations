@@ -1,21 +1,8 @@
-'use client';
-
-import { motion } from 'motion/react';
 import Link from 'next/link';
 import type { Project } from '@/lib/data';
 import { ProjectCover, type CoverVariant } from '@/components/ui/project-cover';
 import { Badge } from '@/components/ui/badge';
-import { stagger, duration, ease } from '@/lib/motion';
-
-const container = {
-	hidden: {},
-	show: { transition: { staggerChildren: stagger.base } },
-};
-
-const item = {
-	hidden: { opacity: 0, y: 16 },
-	show: { opacity: 1, y: 0, transition: { duration: duration.base, ease: ease.out } },
-};
+import { StaggerItem, StaggerList } from '@/components/StaggerList';
 
 interface ProjectDetailProps {
 	project: Project;
@@ -26,29 +13,24 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project, next, variant }: ProjectDetailProps) {
 	return (
 		<section className="flex flex-col items-center pt-20">
-			<motion.div
-				className="container flex flex-col"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true }}>
-				<motion.span variants={item}>
+			<StaggerList className="container flex flex-col">
+				<StaggerItem as="span">
 					<Link
 						href="/work"
 						className="mb-14 inline-flex w-fit items-center gap-2 text-sm text-muted transition-colors hover:text-accent">
 						← All work
 					</Link>
-				</motion.span>
+				</StaggerItem>
 
-				<motion.div className="mb-12 flex max-w-200 flex-col gap-5" variants={item}>
+				<StaggerItem className="mb-12 flex max-w-200 flex-col gap-5">
 					<span className="hud-label">
 						{project.year} — {project.category}
 					</span>
 					<h1 className="text-7xl font-bold">{project.title}</h1>
 					<p className="max-w-170 text-xl text-muted">{project.tagline}</p>
-				</motion.div>
+				</StaggerItem>
 
-				<motion.div className="mb-14 flex border-y hairline py-8" variants={item}>
+				<StaggerItem className="mb-14 flex border-y hairline py-8">
 					<div className="flex-1 pr-8">
 						<span className="hud-label">Year</span>
 						<p className="mt-2 text-base">{project.year}</p>
@@ -59,28 +41,28 @@ export function ProjectDetail({ project, next, variant }: ProjectDetailProps) {
 					</div>
 					<div className="flex-[2] border-l hairline pl-8">
 						<span className="hud-label">Stack</span>
-						<motion.div className="mt-2.5 flex flex-wrap gap-2" variants={container}>
+						<StaggerList className="mt-2.5 flex flex-wrap gap-2" nested={true}>
 							{project.tags.map((tag) => (
-								<motion.span key={tag} variants={item}>
+								<StaggerItem key={tag} as="span">
 									<Badge>{tag}</Badge>
-								</motion.span>
+								</StaggerItem>
 							))}
-						</motion.div>
+						</StaggerList>
 					</div>
-				</motion.div>
+				</StaggerItem>
 
-				<motion.div className="mb-24" variants={item}>
+				<StaggerItem className="mb-24">
 					<ProjectCover letter={project.title[0]} variant={variant} size="lg" />
-				</motion.div>
+				</StaggerItem>
 
-				<motion.div className="mb-24 flex max-w-170 flex-col gap-4" variants={item}>
+				<StaggerItem className="mb-24 flex max-w-170 flex-col gap-4">
 					<span className="hud-label">Overview</span>
 					<p className="text-lg leading-relaxed">{project.description}</p>
-				</motion.div>
+				</StaggerItem>
 
-				<motion.hr className="border-t hairline" variants={item} />
+				<StaggerItem className="border-t hairline" as="hr" />
 
-				<motion.div className="w-fit" variants={item}>
+				<StaggerItem className="w-fit">
 					<Link href={`/work/${next.slug}`} className="group flex flex-col gap-4 my-10">
 						<span className="hud-label">Next project</span>
 						<div className="flex flex-wrap items-baseline gap-4">
@@ -88,8 +70,8 @@ export function ProjectDetail({ project, next, variant }: ProjectDetailProps) {
 							<span className="text-sm text-muted">{next.tagline} →</span>
 						</div>
 					</Link>
-				</motion.div>
-			</motion.div>
+				</StaggerItem>
+			</StaggerList>
 		</section>
 	);
 }
