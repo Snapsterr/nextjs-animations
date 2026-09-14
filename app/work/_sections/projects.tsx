@@ -1,8 +1,8 @@
 import { ProjectCard } from '@/components/ui/project-card';
 import { projects } from '@/lib/data';
 import { stagger } from '@/lib/motion';
-import { StaggerItem, StaggerList } from '@/components/StaggerList';
-import { FadeInWhenVisible } from '@/components/FadeInWhenVisible';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
+import { FadeInWhenVisible } from '@/components/fade-in-when-visible';
 
 // h1 takes its own stagger slot in `container` before the grid starts
 const headerSteps = 1;

@@ -14,9 +14,10 @@ interface StaggerListProps {
 	 * viewport trigger so it inherits the "show" state (and its delay slot) from the ancestor instead
 	 * of animating independently as soon as it's on screen. */
 	nested?: boolean;
+	as?: StaggerListTag;
 }
 
-export function StaggerList({ children, className, step = stagger.base, selfFade = false, nested = false }: StaggerListProps) {
+export function StaggerList({ children, className, step = stagger.base, selfFade = false, nested = false, as = 'div' }: StaggerListProps) {
 	const container = selfFade
 		? {
 				hidden: { opacity: 0, y: 16 },
@@ -28,11 +29,12 @@ export function StaggerList({ children, className, step = stagger.base, selfFade
 		  };
 
 	const trigger = nested ? {} : { initial: 'hidden' as const, whileInView: 'show' as const, viewport: { once: true } };
+	const Tag = motion[as];
 
 	return (
-		<motion.div {...trigger} variants={container} className={className}>
+		<Tag {...trigger} variants={container} className={className}>
 			{children}
-		</motion.div>
+		</Tag>
 	);
 }
 

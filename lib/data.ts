@@ -117,10 +117,19 @@ export const socialLinks = [
 export const profile = {
 	name: 'John Doe',
 	role: 'Software Engineer',
-	location: 'Lisbon, Portugal',
+	location: {
+		city: 'Lisbon',
+		country: 'Portugal',
+		countryCode: 'PT',
+	},
 	email: 'hello@johndoe.dev',
 	startYear: 2018,
-	availability: 'Available for freelance & full-time work',
+	availability: {
+		short: 'Available for work',
+		full: 'Available for freelance & full-time work',
+	},
+	description: "I'm a software engineer with a passion for building web applications that are both functional and beautiful.",
+	tagline: 'I build reliable, thoughtful software for the web.',
 	bio: [
 		'I build reliable, thoughtful software for the web, moving from system design and prototyping through to shipped, production-quality code.',
 		'Lately I have been spending most of my time at the intersection of real-time systems, motion on the web, and frontend architecture that holds up under real traffic, not just a demo.',

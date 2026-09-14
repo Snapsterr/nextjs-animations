@@ -1,19 +1,24 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { ease, duration, stagger } from '@/lib/motion';
+import { stagger } from '@/lib/motion';
+import { profile } from '@/lib/data';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
+import { useScrambleText } from '@/hooks/use-scramble-text';
 
 const container = {
 	hidden: {},
 	show: { transition: { staggerChildren: stagger.base } },
 };
 
-const item = {
-	hidden: { opacity: 0, y: 16 },
-	show: { opacity: 1, y: 0, transition: { duration: duration.base, ease: ease.out } },
-};
+const taglineWords = profile.tagline.split(' ');
 
 export function Hero() {
+	const scrambledName = useScrambleText(profile.name);
+	const scrambledLocationAvailability = useScrambleText(
+		`${profile.location.city}, ${profile.location.countryCode} · ${profile.availability.short}`,
+	);
+
 	return (
 		<section className="flex min-h-[calc(100vh-4rem-1px)] justify-center relative">
 			<div className="absolute inset-0 bg-gradient-grid bg-repeat user-select-none pointer-events-none" />
@@ -29,28 +34,32 @@ export function Hero() {
 				initial="hidden"
 				animate="show"
 				variants={container}>
-				<motion.div className="w-full flex justify-between" variants={item}>
+				<StaggerItem className="w-full flex justify-between">
 					<div className="flex flex-col gap-1">
-						<h1 className="text-5xl font-bold">John Doe</h1>
-						<span className="text-muted">Lisbon, PT · Available for work</span>
+						<h1 className="text-5xl font-bold">{scrambledName}</h1>
+						<span className="text-muted">{scrambledLocationAvailability}</span>
 					</div>
 
 					<div className="max-w-75">
-						<p className="text-right text-muted">
-							I'm a software engineer with a passion for building web applications that are both functional and beautiful.
-						</p>
+						<p className="text-right text-muted">{profile.description}</p>
 					</div>
-				</motion.div>
+				</StaggerItem>
 				<div className="flex flex-1 items-center">
-					<motion.div className="flex self-end max-w-240 pb-50" variants={item}>
-						<p className="text-8xl font-bold">I build reliable, thoughtful software for the web.</p>
-					</motion.div>
+					<StaggerItem className="flex self-end max-w-240 pb-50">
+						<StaggerList className="text-8xl font-bold" step={stagger.tight} nested={true} as="p" aria-label={profile.tagline}>
+							{taglineWords.map((taglineWord, i) => (
+								<StaggerItem key={i} className="inline-block not-last-of-type:mr-[0.15em]" as="span" aria-hidden={true}>
+									{taglineWord}
+								</StaggerItem>
+							))}
+						</StaggerList>
+					</StaggerItem>
 				</div>
-				<motion.div className="flex justify-between items-center gap-2" variants={item}>
+				<StaggerItem className="flex justify-between items-center gap-2">
 					<span className="hud-label">41.15°N, 8.61°W</span>
 					<span className="hud-label">01 — Intro</span>
 					<span className="hud-label">Scroll to explore ↓</span>
-				</motion.div>
+				</StaggerItem>
 			</motion.div>
 		</section>
 	);

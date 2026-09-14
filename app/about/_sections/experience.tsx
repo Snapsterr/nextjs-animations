@@ -2,8 +2,8 @@ import { profile } from '@/lib/data';
 import { ExperienceItem } from '@/components/ui/experience-item';
 import { Button } from '@/components/ui/button';
 import { stagger } from '@/lib/motion';
-import { StaggerItem, StaggerList } from '@/components/StaggerList';
-import { FadeInWhenVisible } from '@/components/FadeInWhenVisible';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
+import { FadeInWhenVisible } from '@/components/fade-in-when-visible';
 
 // span (02 — Experience) and h2 each take their own stagger slot in `container` before the timeline block starts
 const headerSteps = 2;

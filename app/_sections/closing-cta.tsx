@@ -1,6 +1,6 @@
 import { profile } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import { StaggerItem, StaggerList } from '@/components/StaggerList';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
 
 interface ClosingCtaProps {
 	eyebrow?: string;

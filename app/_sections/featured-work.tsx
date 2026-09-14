@@ -2,8 +2,8 @@ import { projects } from '@/lib/data';
 import { ProjectCard } from '@/components/ui/project-card';
 import { Button } from '@/components/ui/button';
 import { duration, stagger } from '@/lib/motion';
-import { StaggerItem, StaggerList } from '@/components/StaggerList';
-import { FadeInWhenVisible } from '@/components/FadeInWhenVisible';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
+import { FadeInWhenVisible } from '@/components/fade-in-when-visible';
 
 const featuredProjects = projects.filter((project) => project.featured);
 

@@ -1,7 +1,7 @@
 import { profile, projects } from '@/lib/data';
 import { Badge } from '@/components/ui/badge';
 import { Stat } from '@/components/ui/stat';
-import { StaggerItem, StaggerList } from '@/components/StaggerList';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
 
 export function Profile() {
 	const yearsWriting = new Date().getFullYear() - profile.startYear;
@@ -30,7 +30,9 @@ export function Profile() {
 								<span className="hud-label">Profile</span>
 								<span className="mt-1.5 text-xl font-semibold">{profile.name}</span>
 								<span className="text-sm text-muted">{profile.role}</span>
-								<span className="hud-label mt-2.5">{profile.location}</span>
+								<span className="hud-label mt-2.5">
+									{profile.location.city}, {profile.location.country}
+								</span>
 								<span className="hud-label">{profile.email}</span>
 							</div>
 							<StaggerList className="flex flex-col gap-3" selfFade={true} nested={true}>
@@ -65,7 +67,7 @@ export function Profile() {
 				<StaggerItem className="flex justify-between items-center">
 					<div className="flex gap-2 items-center">
 						<span className="bg-accent rounded-full w-2 h-2"></span>
-						<span className="hud-label">{profile.availability}</span>
+						<span className="hud-label">{profile.availability.full}</span>
 					</div>
 					<span className="hud-label">Experience next ↓</span>
 				</StaggerItem>

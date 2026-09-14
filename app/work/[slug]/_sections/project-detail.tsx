@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Project } from '@/lib/data';
 import { ProjectCover, type CoverVariant } from '@/components/ui/project-cover';
 import { Badge } from '@/components/ui/badge';
-import { StaggerItem, StaggerList } from '@/components/StaggerList';
+import { StaggerItem, StaggerList } from '@/components/stagger-list';
 
 interface ProjectDetailProps {
 	project: Project;
