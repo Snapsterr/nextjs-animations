@@ -121,6 +121,7 @@ export const profile = {
 		city: 'Lisbon',
 		country: 'Portugal',
 		countryCode: 'PT',
+		coordinates: '41.15°N, 8.61°W',
 	},
 	email: 'hello@johndoe.dev',
 	startYear: 2018,
@@ -166,3 +167,18 @@ export const profile = {
 		},
 	] satisfies TimelineEntry[],
 };
+
+export const homeSections = [
+	{
+		id: 'intro',
+		label: '01 — Intro',
+	},
+	{
+		id: 'work',
+		label: '02 — Work',
+	},
+	{
+		id: 'contact',
+		label: '03 — Get in touch',
+	},
+] as const;

@@ -20,7 +20,7 @@ export function Hero() {
 	);
 
 	return (
-		<section className="flex min-h-[calc(100vh-4rem-1px)] justify-center relative">
+		<section id="intro" className="flex min-h-[calc(100vh-4rem-1px)] justify-center relative">
 			<div className="absolute inset-0 bg-gradient-grid bg-repeat user-select-none pointer-events-none" />
 			<div className="absolute top-42 left-82 w-14 h-14 rounded-md bg-surface-2 border border-border-hairline shadow-shape -rotate-8 -z-1 user-select-none pointer-events-none -z-1" />
 			<div className="absolute top-128 right-73 w-14 h-14 rounded-md bg-surface-2 border border-border-hairline shadow-shape rotate-14 -z-1 user-select-none pointer-events-none -z-1" />
@@ -55,11 +55,6 @@ export function Hero() {
 						</StaggerList>
 					</StaggerItem>
 				</div>
-				<StaggerItem className="flex justify-between items-center gap-2">
-					<span className="hud-label">41.15°N, 8.61°W</span>
-					<span className="hud-label">01 — Intro</span>
-					<span className="hud-label">Scroll to explore ↓</span>
-				</StaggerItem>
 			</motion.div>
 		</section>
 	);
