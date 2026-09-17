@@ -4,7 +4,7 @@ export function Footer() {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer id="site-footer" className="border-t hairline flex justify-center items-center">
+		<footer id="site-footer" className="border-t hairline flex justify-center items-center bg-canvas/60 backdrop-blur-md">
 			<div className="container flex flex-wrap items-center justify-between gap-4 py-8">
 				<span className="hud-label">
 					© {year} {profile.name}

@@ -25,9 +25,7 @@ export function HudOverlay({ sections, coordinates, footerId }: HudOverlayProps)
 	const isLastSection = activeIndex === sections.length - 1;
 
 	return (
-		<div
-			className="fixed inset-x-0 bottom-0 border-t hairline bg-canvas/80 backdrop-blur-md pointer-events-none"
-			aria-hidden="true">
+		<div className="fixed inset-x-0 bottom-0 border-t hairline bg-canvas/60 backdrop-blur-md pointer-events-none" aria-hidden="true">
 			<div className="container mx-auto flex items-center justify-between gap-4 px-[var(--gutter)] py-3">
 				<span className="hud-label">{coordinates}</span>
 				{!isLastSection && <span className="hud-label">{sections[activeIndex].label}</span>}

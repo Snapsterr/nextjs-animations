@@ -21,14 +21,6 @@ export function Hero() {
 
 	return (
 		<section id="intro" className="flex min-h-[calc(100vh-4rem-1px)] justify-center relative">
-			<div className="absolute inset-0 bg-gradient-grid bg-repeat user-select-none pointer-events-none" />
-			<div className="absolute top-42 left-82 w-14 h-14 rounded-md bg-surface-2 border border-border-hairline shadow-shape -rotate-8 -z-1 user-select-none pointer-events-none -z-1" />
-			<div className="absolute top-128 right-73 w-14 h-14 rounded-md bg-surface-2 border border-border-hairline shadow-shape rotate-14 -z-1 user-select-none pointer-events-none -z-1" />
-			<div className="absolute top-24 right-89 w-10 h-10 rounded-full bg-surface-2 shadow-shape user-select-none pointer-events-none -z-1" />
-			<div className="absolute top-27 left-1/2 -translate-x-1/2 w-130 h-130 rounded-full shadow-radial bg-accent/6">
-				<div className="absolute top-[14%] left-[22%] w-[32%] h-[22%] rounded-full bg-white/35 blur-[22px]" />
-			</div>
-
 			<motion.div
 				className="container w-full grid grid-rows-[auto_1fr_50] min-h-full py-24"
 				initial="hidden"
@@ -45,7 +37,7 @@ export function Hero() {
 					</div>
 				</StaggerItem>
 				<div className="flex flex-1 items-center">
-					<StaggerItem className="flex self-end max-w-240 pb-50">
+					<StaggerItem className="flex self-end max-w-240 pb-20">
 						<StaggerList className="text-8xl font-bold" step={stagger.tight} nested={true} as="p" aria-label={profile.tagline}>
 							{taglineWords.map((taglineWord, i) => (
 								<StaggerItem key={i} className="inline-block not-last-of-type:mr-[0.15em]" as="span" aria-hidden={true}>
