@@ -6,7 +6,7 @@ import { stagger } from '@/lib/motion';
 import { profile } from '@/lib/data';
 import { StaggerItem, StaggerList } from '@/components/stagger-list';
 import { useScrambleText } from '@/hooks/use-scramble-text';
-import { SplineGemstone } from '@/components/spline-gemstone';
+import { R3FGemstone } from '@/components/r3f-gemstone';
 
 const container = {
 	hidden: {},
@@ -65,11 +65,7 @@ export function Hero() {
 						</StaggerItem>
 					</div>
 				</motion.div>
-
-				<SplineGemstone
-					className="bottom-[36%] right-[8%] hidden w-[clamp(210px,20vw,260px)] aspect-2/3"
-					scene="https://prod.spline.design/gvUOvv6uT79O6HHv/scene.splinecode"
-				/>
+				<R3FGemstone className="bottom-[30%] right-[10%] hidden w-[clamp(170px,15vw,230px)] aspect-2/3" />
 			</motion.div>
 		</section>
 	);
