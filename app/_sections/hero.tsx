@@ -49,9 +49,9 @@ export function Hero() {
 						</div>
 					</StaggerItem>
 					<div className="flex flex-1 items-center">
-						<StaggerItem className="flex self-end max-w-240 pb-20">
+						<StaggerItem className="flex self-end max-w-140 pb-20 lg:max-w-180 2xl:max-w-240">
 							<StaggerList
-								className="text-8xl font-bold"
+								className="text-5xl font-bold md:text-6xl lg:text-7xl 2xl:text-8xl"
 								step={stagger.tight}
 								nested={true}
 								as="p"

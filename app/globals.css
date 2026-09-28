@@ -84,3 +84,10 @@ body {
 .hairline {
   border-color: var(--border-hairline);
 }
+
+@utility container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}

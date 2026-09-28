@@ -1,6 +1,7 @@
 import { profile } from '@/lib/data';
 import { ExperienceItem } from '@/components/ui/experience-item';
 import { Button } from '@/components/ui/button';
+import { TimelineLine } from '@/components/ui/timeline-line';
 import { stagger } from '@/lib/motion';
 import { StaggerItem, StaggerList } from '@/components/stagger-list';
 import { FadeInWhenVisible } from '@/components/fade-in-when-visible';
@@ -24,16 +25,18 @@ export function Experience() {
 						</StaggerItem>
 					</div>
 
-					<StaggerList
-						className="flex flex-col divide-y divide-border-hairline border-y border-border-hairline"
-						selfFade={true}
-						nested={true}>
-						{profile.timeline.map((entry) => (
-							<StaggerItem key={entry.id}>
-								<ExperienceItem period={entry.period} role={entry.role} org={entry.org} description={entry.description} />
-							</StaggerItem>
-						))}
-					</StaggerList>
+					<div className="relative">
+						<TimelineLine />
+						<StaggerList className="flex flex-col" selfFade={true} nested={true}>
+							{profile.timeline.map((entry) => (
+								<StaggerItem
+									key={entry.id}
+									className="relative pl-6 after:absolute after:top-8.5 after:-left-[3px] after:size-2 after:rounded-full after:bg-accent after:shadow-[0_0_0_4px_var(--canvas)]">
+									<ExperienceItem period={entry.period} role={entry.role} org={entry.org} description={entry.description} />
+								</StaggerItem>
+							))}
+						</StaggerList>
+					</div>
 				</div>
 
 				<FadeInWhenVisible className="flex justify-between items-center" delay={timelineButtonDelay}>

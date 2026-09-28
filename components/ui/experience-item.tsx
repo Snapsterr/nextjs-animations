@@ -7,7 +7,7 @@ interface ExperienceItemProps {
 
 export function ExperienceItem({ period, role, org, description }: ExperienceItemProps) {
 	return (
-		<div className="grid grid-cols-[160px_1fr] gap-6 py-7">
+		<div className="grid grid-cols-[160px_1fr] gap-6 py-7 border-b border-border-hairline">
 			<span className="hud-label pt-0.5">{period}</span>
 			<div className="flex flex-col gap-1.5">
 				<div className="flex flex-wrap items-baseline gap-2.5">

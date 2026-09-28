@@ -22,8 +22,8 @@ export function Projects() {
 
 					<StaggerList className="grid grid-cols-1 gap-6 md:grid-cols-3" selfFade={true} nested={true}>
 						{projects.map((project, index) => (
-							<StaggerItem key={project.id}>
-								<ProjectCard project={project} index={index} />
+							<StaggerItem key={project.id} className={index === 0 ? 'col-span-2 row-span-2' : ''}>
+								<ProjectCard project={project} index={index} size={index === 0 ? 'lg' : 'sm'} />
 							</StaggerItem>
 						))}
 					</StaggerList>

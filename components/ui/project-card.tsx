@@ -6,14 +6,15 @@ import { ProjectCover, coverVariants } from './project-cover';
 interface ProjectCardProps {
 	project: Project;
 	index?: number;
+	size?: 'sm' | 'lg';
 }
 
-export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+export function ProjectCard({ project, index = 0, size = 'sm' }: ProjectCardProps) {
 	const variant = coverVariants[index % coverVariants.length];
 
 	return (
-		<Link href={`/work/${project.slug}`} className="group flex flex-col">
-			<ProjectCover letter={project.title[0]} variant={variant} />
+		<Link href={`/work/${project.slug}`} className="group flex h-full flex-col">
+			<ProjectCover letter={project.title[0]} variant={variant} size={size} />
 
 			<div className="flex flex-col gap-2.5 pt-5">
 				<span className="hud-label">{project.category}</span>

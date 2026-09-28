@@ -13,7 +13,7 @@ const cover = tv({
 		},
 		size: {
 			sm: 'h-55',
-			lg: 'h-110',
+			lg: 'min-h-110 flex-1',
 		},
 	},
 	defaultVariants: {
